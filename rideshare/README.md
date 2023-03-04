@@ -1,8 +1,8 @@
 # Instructions to start our application
 
-##How to activate Python virtual environment
+## How to activate Python virtual environment
 
-###MacOS / Linux:
+### MacOS / Linux:
 
 1. Change the terminal directory to the folder "rideshare" containing this file
 2. Enter "**source venv/bin/activate**" into the terminal
