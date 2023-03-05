@@ -1,0 +1,100 @@
+/* car image styling  */
+.landing__main img {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 76px;
+    left: 0;
+    opacity: 70%;
+}
+
+/* positioning for the square div  */
+.landing__main-square {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 40px;
+    top: 150px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25); /* lil backdrop shadow */
+    }
+
+/* Choose rides at great prices today! header*/
+.landing__main-square h2 {
+    /* positioning and sizing  */
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    left: 10px;
+    top: 30px;
+
+    /* text styling  */
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 55px;
+    word-spacing: -2px;
+    color: #000000;
+
+    /* display and alignment  */
+    display: flex;
+    align-items: center;
+}
+
+/* paragraph blurb under the header  */
+.landing__main-square p {
+    /* positioning and sizing  */
+    position: absolute;
+    width: 400px;
+    height: 73px;
+    left: 10px;
+    top: 200px;
+
+    /* text styling  */
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+
+    /* display and alignment  */
+    display: flex;
+    align-items: center;
+}
+
+/* browse rides button  */
+.landing__main-square a {
+    /* positioning and styling  */
+    position: absolute;
+    width: 115px;
+    height: 60px;
+    left: 32px;
+    top: 350px;
+
+    /* color, bordering, corner rounding, text alignment  */
+    background: #5B62FF;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+/* browse rides text within the button  */
+.landing__main-square p[id = 'rides'] {
+    /* positioning  */
+    position: absolute;
+    top: -22px;
+    left: 10px;
+
+    /* text styling and sizing  */
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    text-decoration: none;/*  removes the underlining of the a tag  */
+    color: #000000;
+}

@@ -16,7 +16,7 @@
 
 ## How to start the application
 
-1. Change the PowerShell directory to the folder "rideshare" containing this file
+1. Change the terminal directory to the folder "rideshare" containing this file
 2. Ensure you have activated the Python virtual environment
 3. Enter "python3 manage.py runserver" into your terminal
 4. Navigate to the hosting URL (currently 127.0.0.1:8000 or localhost:8000)
