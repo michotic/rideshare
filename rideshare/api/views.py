@@ -10,19 +10,12 @@ from django.contrib import messages
 
 # Create your views here.
 
+# View for our React Application
 class MyReactView(TemplateView):
-    template_name = 'react_app.html'
+    template_name = 'react-app.html'
 
     def get_context_data(self, **kwargs):
         return {'context_variable': 'value'}
-
-class ProfileView(viewsets.ModelViewSet):
-  queryset = Profile.objects.all()
-  serializer_class = ProfileSerializer
-
-
-def index(request):
-  return render(request,'index.html')
 
 def signup(request):
   if request.method == 'POST':
