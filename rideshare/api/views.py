@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from rest_framework import viewsets
+from django.views.generic import TemplateView
 from .serializers import ProfileSerializer
 from .models import Profile
 
@@ -8,6 +9,12 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
 # Create your views here.
+
+class MyReactView(TemplateView):
+    template_name = 'react_app.html'
+
+    def get_context_data(self, **kwargs):
+        return {'context_variable': 'value'}
 
 class ProfileView(viewsets.ModelViewSet):
   queryset = Profile.objects.all()
