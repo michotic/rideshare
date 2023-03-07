@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
-    'frontend'
+    'drf_spectacular',
+    'frontend',
 ]
+
+REST_FRAMEWORK = {
+    # your other DRF settings here
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

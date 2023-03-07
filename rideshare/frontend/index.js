@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import {
   Index,
   Landing,
@@ -15,7 +14,7 @@ import {
 
 const App = () => {
   return (
-    <>
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/index" element={<Index />}></Route>
@@ -28,9 +27,10 @@ const App = () => {
           <Route path="/password" element={<Password />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(<App />);
