@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: django-oauth2
+Version: 4.0
+Summary: Provide OAuth2 access to your app (fork of django-oauth2-provider)
+Home-page: https://github.com/stormsherpa/django-oauth2-provider
+Author: Shaun Kruger
+Author-email: shaun.kruger@gmail.com
+License: The MIT License: http://www.opensource.org/licenses/mit-license.php
+Description: django-oauth2
+        ======================
+        
+        .. image:: https://travis-ci.org/stormsherpa/django-oauth2-provider.png?branch=master
+        
+        *django-oauth2* is a Django application that provides
+        customizable OAuth2\-authentication for your Django projects.
+        
+        `Documentation <https://new-django-oauth2.readthedocs.io/en/latest/>`_
+        
+        License
+        =======
+        
+        *django-oauth2* is a fork of *django-oauth2-provider* which is released under the MIT License. Please see the LICENSE file for details.
+        
+Platform: all
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django

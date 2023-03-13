@@ -40,16 +40,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
+    'rest_framework_api_key',
     'drf_spectacular',
     'frontend',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
     # your other DRF settings here
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }
 
+# API_KEY_CUSTOM_HEADER = "HTTP_USER_AGENT"
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -79,14 +88,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rideshare.wsgi.application'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'postgres',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'rideshare-db',
         'USER':'postgres',
         'PASSWORD': '',
         'HOST':'localhost',

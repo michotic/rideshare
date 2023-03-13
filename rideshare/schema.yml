@@ -3,14 +3,14 @@ info:
   title: ''
   version: 0.0.0
 paths:
-  /api/profiles/:
+  /api/profile/:
     get:
-      operationId: api_profiles_list
+      operationId: profile_list
       tags:
-      - api
+      - profile
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '200':
@@ -22,9 +22,9 @@ paths:
                   $ref: '#/components/schemas/Profile'
           description: ''
     post:
-      operationId: api_profiles_create
+      operationId: profile_create
       tags:
-      - api
+      - profile
       requestBody:
         content:
           application/json:
@@ -38,8 +38,8 @@ paths:
               $ref: '#/components/schemas/Profile'
         required: true
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '201':
@@ -48,21 +48,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/Profile'
           description: ''
-  /api/profiles/{id}/:
+  /api/profile/{username}/:
     get:
-      operationId: api_profiles_retrieve
+      operationId: profile_retrieve
       parameters:
       - in: path
-        name: id
+        name: username
         schema:
-          type: integer
-        description: A unique integer value identifying this profile.
+          type: string
+        description: A unique value identifying this profile.
         required: true
       tags:
-      - api
+      - profile
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '200':
@@ -72,16 +72,16 @@ paths:
                 $ref: '#/components/schemas/Profile'
           description: ''
     put:
-      operationId: api_profiles_update
+      operationId: profile_update
       parameters:
       - in: path
-        name: id
+        name: username
         schema:
-          type: integer
-        description: A unique integer value identifying this profile.
+          type: string
+        description: A unique value identifying this profile.
         required: true
       tags:
-      - api
+      - profile
       requestBody:
         content:
           application/json:
@@ -95,8 +95,8 @@ paths:
               $ref: '#/components/schemas/Profile'
         required: true
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '200':
@@ -106,16 +106,16 @@ paths:
                 $ref: '#/components/schemas/Profile'
           description: ''
     patch:
-      operationId: api_profiles_partial_update
+      operationId: profile_partial_update
       parameters:
       - in: path
-        name: id
+        name: username
         schema:
-          type: integer
-        description: A unique integer value identifying this profile.
+          type: string
+        description: A unique value identifying this profile.
         required: true
       tags:
-      - api
+      - profile
       requestBody:
         content:
           application/json:
@@ -128,8 +128,8 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchedProfile'
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '200':
@@ -139,35 +139,182 @@ paths:
                 $ref: '#/components/schemas/Profile'
           description: ''
     delete:
-      operationId: api_profiles_destroy
+      operationId: profile_destroy
       parameters:
       - in: path
-        name: id
+        name: username
         schema:
-          type: integer
-        description: A unique integer value identifying this profile.
+          type: string
+        description: A unique value identifying this profile.
         required: true
       tags:
-      - api
+      - profile
       security:
-      - cookieAuth: []
       - basicAuth: []
+      - cookieAuth: []
       - {}
       responses:
         '204':
           description: No response body
+  /api/schema.yml:
+    get:
+      operationId: schema.yml_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema.yml
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
 components:
   schemas:
     PatchedProfile:
       type: object
       properties:
-        id:
-          type: integer
-          readOnly: true
-        id_user:
-          type: integer
-          maximum: 2147483647
-          minimum: -2147483648
+        username:
+          type: string
+          maxLength: 50
+        password:
+          type: string
+          maxLength: 250
+        email:
+          type: string
+          format: email
+          maxLength: 254
         bio:
           type: string
         profileimg:
@@ -179,13 +326,16 @@ components:
     Profile:
       type: object
       properties:
-        id:
-          type: integer
-          readOnly: true
-        id_user:
-          type: integer
-          maximum: 2147483647
-          minimum: -2147483648
+        username:
+          type: string
+          maxLength: 50
+        password:
+          type: string
+          maxLength: 250
+        email:
+          type: string
+          format: email
+          maxLength: 254
         bio:
           type: string
         profileimg:
@@ -195,8 +345,9 @@ components:
           type: string
           maxLength: 100
       required:
-      - id
-      - id_user
+      - email
+      - password
+      - username
   securitySchemes:
     basicAuth:
       type: http

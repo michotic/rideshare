@@ -14,69 +14,48 @@ from .serializers import ProfileSerializer
 
 # View for our React Application
 class MyReactView(TemplateView):
-    template_name = 'react-app.html'
+  template_name = 'react-app.html'
 
-    def get_context_data(self, **kwargs):
-        return {'context_variable': 'value'}
+  def get_context_data(self, **kwargs):
+      return {'context_variable': 'value'}
 
-class ProfileListView(viewsets.ModelViewSet):
-  serializer_class = ProfileSerializer
+# View for Profile CRUD API
+class ProfileViewSet(viewsets.ModelViewSet):
   queryset = Profile.objects.all()
+  serializer_class = ProfileSerializer
 
-# @api_view(['GET', 'POST'])
-# def profile_list(request):
-#   if request.method == 'GET':
-#     profiles = Profile.objects.all()
-#     serializer = ProfileSerializer(profiles, many = True)
-#     return Response(serializer.data)
-#   elif request.method == 'POST':
-#     serializer = ProfileSerializer(data=request.data)
-#     if serializer.is_valid():
-#       serializer.save()
-#       return Response(status=status.HTTP_201_CREATED)
-#     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-  
+  # perform_create(...) runs whenever a createProfile(...) method is called from our API
+  def perform_create(self, serializer):
+        # Get data from the serializer
+        data = serializer.data
+        username = data['username']
+        email = data['email']
+        password = data['password']
 
-# @api_view(['POST'])
-# def create_account(request):
-#    return
-  
+        if User.objects.filter(email = email).exists():
+          # Email already exists
+          pass
+        elif User.objects.filter(username = username).exists():
+          # Username already exists
+          pass
+        else: 
+          # Create Django User
+          user = User.objects.create_user(username = username, email = email, password = password)
+          user.save()
+          user_model = User.objects.get(username = username)
+          # Create profile referencing Django user
+          profile_model = Profile.objects.create(user = user_model)
+          profile_model.username = username
+          profile_model.email = email
+          profile_model.password = ""
+          profile_model.save()
+          print("User made with username, email :", username, email)
 
-
-# Old views from Francis's mockup
-# def signup(request):
-#   if request.method == 'POST':
-#     username = request.POST['username']
-#     email = request.POST['email']
-#     password = request.POST['password']
-#     password2 = request.POST['password']
-#     if password == password2:
-#       if User.objects.filter(email = email).exists():
-#         messages.info(request,"Email already exists")
-#         return redirect('signup')
-#       elif User.objects.filter(username = username).exists():
-#         messages.info(request,"username already exists")
-#         return redirect('signup')
-#       else: 
-#         user = User.objects.create_user(username = username, email = email, password = password)
-#         user.save()
-        
-#         # log user in and redirect to settings page
-
-#         # create a profile object for the new user
-#         user_model = User.objects.get(username = username)
-#         new_profile = Profile.objects.create(user = user_model, id_user = user_model.id)
-#         new_profile.save()
-#         return redirect('signup')
-
-
-#     else:
-#       messages.info(request, "Password doesn't matching")
-#       return redirect('signup')
-    
-#   else:
-#     return render(request,'signup.html')
-  
+  def retrieve(self, request, *args, **kwargs):
+    user_model = User.objects.get(username=request.user)
+    profile = Profile.objects.get(username=request.user)
+    return Response(user_model.is_authenticated)
+          
 
 # def signin(request):
 #   if request.method == "POST":

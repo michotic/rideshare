@@ -12,7 +12,7 @@ module.exports = {
     alias: {
       components: path.resolve(__dirname, "src/components"),
     },
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts"],
   },
 
   // Set babel loader as default for React files
@@ -23,6 +23,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         options: { presets: ["@babel/preset-env", "@babel/preset-react"] },
+        parser: {
+          amd: false,
+        },
+      },
+      {
+        test: /\.ts$/i,
+        use: ["ts-loader"],
       },
       {
         test: /\.css$/i,
