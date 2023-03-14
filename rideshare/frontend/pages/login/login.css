@@ -1,167 +1,167 @@
 /* basic flex styling for entire div  */
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* removes login and signup off of navbar while in login screen  */
-.login__navbar ul, form{
-    display: none;
+.login__navbar ul,
+form {
+  display: none;
 }
 
 /* sets display style for whole login form including email/phone, password and continue fields 
 to revert the display:none; from styling above  */
-.login__forum form[id = 'login'] {
-    display: block;
+.login__forum form[id="login"] {
+  display: block;
 }
 
 /* positioning on screen for entire form  */
 .login__forum {
-    position: absolute;
+  position: absolute;
 
-    width: 460px;
-    left: 490px;
-    top: 200px;
+  width: 460px;
+  left: 490px;
+  top: 200px;
 }
 
 /* underlining of header  */
 .login__forum span {
-    padding: 1rem;
-    border-bottom: 1px solid black;
+  padding: 1rem;
+  border-bottom: 1px solid black;
 }
 
 .login__forum h1 {
-    /* text styling for header element of the forum  */
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-   
-    /* display and alignment styling  */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
+  /* text styling for header element of the forum  */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+
+  /* display and alignment styling  */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
 }
 
 .login__forum ul {
-    /* styling and alignment of list of elements in the forum, containing email, password and continue fields  */
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+  /* styling and alignment of list of elements in the forum, containing email, password and continue fields  */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
- 
+
 /* styling for just the email field  */
-.login__forum input[type='email'] {
-    /* size and style of field  */
-    box-sizing: border-box;
-    width: 400px;
-    height: 65px;
-    
-    /* margins around field  */
-    margin: 1rem;
-    margin-bottom: 0rem;
+.login__forum input[type="email"] {
+  /* size and style of field  */
+  box-sizing: border-box;
+  width: 400px;
+  height: 65px;
 
-    /* background and border, corner rounding  */
-    background: #D9D9D9;
-    opacity: 0.8;
-    border: 1px solid #000000;
-    border-radius: 5px;
+  /* margins around field  */
+  margin: 1rem;
+  margin-bottom: 0rem;
 
-    /* text styling for user input */
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 20px;
-    text-align: center;
+  /* background and border, corner rounding  */
+  background: #d9d9d9;
+  opacity: 0.8;
+  border: 1px solid #000000;
+  border-radius: 5px;
+
+  /* text styling for user input */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* text styling for placeholder text (text inside field when empty)  */
-input[type='email']::placeholder, input[type='password'] {
-    /* sizes and margins  */
-    width: 274px;
-    height: 24px;
-    margin-left: 1rem;
-    margin-top: 0.4rem;
+input[type="username"]::placeholder,
+input[type="password"] {
+  /* sizes and margins  */
+  width: 274px;
+  height: 24px;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
 
-    /* text styling  */
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    color: #000000;
-    opacity: 0.5;
+  /* text styling  */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.5;
 
-    /* display and alignment of text */
-    display: flex;
-    align-items: center;
-    text-align: center;
+  /* display and alignment of text */
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 /* styling for just the password field  */
-.login__forum input[type='password'] {
-    /* sizing and margin of field  */
-    box-sizing: border-box;
-    width: 400px;
-    height: 65px;
-    margin: 1rem;
-    
-    /* styling of color, opacity, border and corner rounding  */
-    background: #D9D9D9;
-    opacity: 0.8;
-    border: 1px solid #000000;
-    border-radius: 5px;
+.login__forum input[type="password"] {
+  /* sizing and margin of field  */
+  box-sizing: border-box;
+  width: 400px;
+  height: 65px;
+  margin: 1rem;
+
+  /* styling of color, opacity, border and corner rounding  */
+  background: #d9d9d9;
+  opacity: 0.8;
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
 
 /* text styling for password placeholder text (text inside field when empty)  */
-input[type='password']::placeholder {
-    /* text sizing  */
-    width: 274px;
-    height: 24px;
-    margin-left: 1rem;
-    margin-top: 0.4rem;
+input[type="password"]::placeholder {
+  /* text sizing  */
+  width: 274px;
+  height: 24px;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
 
-    /* text styling  */
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    color: #000000;    
-    opacity: 0.5;
+  /* text styling  */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.5;
 
-    /* display and alignment  */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    }
-    
-
-/* continue submit button styling */
-.login__forum input[type='submit'] {
-    /* box sizing  */
-    box-sizing: border-box;
-    width: 400px;
-    height: 65px;
-    margin: 1rem;
-
-    /* styling of color, opacity, border and corner rounding  */
-    border: 1px solid black;
-    background: #5B62FF;
-    opacity: 0.8;
-    border-radius: 5px;
-
-    /* text styling  */
-    font-family: 'Poppins', sans-serif;
-    font-style: bold;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
+  /* display and alignment  */
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
+/* continue submit button styling */
+.login__forum input[type="submit"] {
+  /* box sizing  */
+  box-sizing: border-box;
+  width: 400px;
+  height: 65px;
+  margin: 1rem;
+
+  /* styling of color, opacity, border and corner rounding  */
+  border: 1px solid black;
+  background: #5b62ff;
+  opacity: 0.8;
+  border-radius: 5px;
+
+  /* text styling  */
+  font-family: "Poppins", sans-serif;
+  font-style: bold;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}

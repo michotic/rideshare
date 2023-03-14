@@ -14,8 +14,11 @@
 
 import ApiClient from './ApiClient';
 import PatchedProfile from './model/PatchedProfile';
+import PatchedRidePosting from './model/PatchedRidePosting';
 import Profile from './model/Profile';
+import RidePosting from './model/RidePosting';
 import ProfileApi from './api/ProfileApi';
+import RidepostingApi from './api/RidepostingApi';
 import SchemaYmlApi from './api/SchemaYmlApi';
 
 
@@ -64,16 +67,34 @@ export {
     PatchedProfile,
 
     /**
+     * The PatchedRidePosting model constructor.
+     * @property {module:model/PatchedRidePosting}
+     */
+    PatchedRidePosting,
+
+    /**
      * The Profile model constructor.
      * @property {module:model/Profile}
      */
     Profile,
 
     /**
+     * The RidePosting model constructor.
+     * @property {module:model/RidePosting}
+     */
+    RidePosting,
+
+    /**
     * The ProfileApi service constructor.
     * @property {module:api/ProfileApi}
     */
     ProfileApi,
+
+    /**
+    * The RidepostingApi service constructor.
+    * @property {module:api/RidepostingApi}
+    */
+    RidepostingApi,
 
     /**
     * The SchemaYmlApi service constructor.

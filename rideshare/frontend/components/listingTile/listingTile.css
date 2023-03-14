@@ -1,0 +1,30 @@
+.ride-listing-tile {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ride-listing-tile:hover {
+  transform: translateY(-5px);
+}
+
+.ride-listing-tile-preview {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ride-listing-tile-date {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.ride-listing-tile-locations {
+  font-size: 16px;
+  text-align: center;
+}
+
+h2 {
+  font-weight: bold;
+}

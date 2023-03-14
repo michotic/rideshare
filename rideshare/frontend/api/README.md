@@ -136,13 +136,21 @@ Class | Method | HTTP request | Description
 *OpenapiJsClient.ProfileApi* | [**profilePartialUpdate**](docs/ProfileApi.md#profilePartialUpdate) | **PATCH** /api/profile/{username}/ | 
 *OpenapiJsClient.ProfileApi* | [**profileRetrieve**](docs/ProfileApi.md#profileRetrieve) | **GET** /api/profile/{username}/ | 
 *OpenapiJsClient.ProfileApi* | [**profileUpdate**](docs/ProfileApi.md#profileUpdate) | **PUT** /api/profile/{username}/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingCreate**](docs/RidepostingApi.md#ridepostingCreate) | **POST** /api/rideposting/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingDestroy**](docs/RidepostingApi.md#ridepostingDestroy) | **DELETE** /api/rideposting/{order_id}/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingList**](docs/RidepostingApi.md#ridepostingList) | **GET** /api/rideposting/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingPartialUpdate**](docs/RidepostingApi.md#ridepostingPartialUpdate) | **PATCH** /api/rideposting/{order_id}/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingRetrieve**](docs/RidepostingApi.md#ridepostingRetrieve) | **GET** /api/rideposting/{order_id}/ | 
+*OpenapiJsClient.RidepostingApi* | [**ridepostingUpdate**](docs/RidepostingApi.md#ridepostingUpdate) | **PUT** /api/rideposting/{order_id}/ | 
 *OpenapiJsClient.SchemaYmlApi* | [**schemaYmlRetrieve**](docs/SchemaYmlApi.md#schemaYmlRetrieve) | **GET** /api/schema.yml | 
 
 
 ## Documentation for Models
 
  - [OpenapiJsClient.PatchedProfile](docs/PatchedProfile.md)
+ - [OpenapiJsClient.PatchedRidePosting](docs/PatchedRidePosting.md)
  - [OpenapiJsClient.Profile](docs/Profile.md)
+ - [OpenapiJsClient.RidePosting](docs/RidePosting.md)
 
 
 ## Documentation for Authorization

@@ -156,6 +156,167 @@ paths:
       responses:
         '204':
           description: No response body
+  /api/rideposting/:
+    get:
+      operationId: rideposting_list
+      tags:
+      - rideposting
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RidePosting'
+          description: ''
+    post:
+      operationId: rideposting_create
+      tags:
+      - rideposting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RidePosting'
+          description: ''
+  /api/rideposting/{order_id}/:
+    get:
+      operationId: rideposting_retrieve
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this ride posting.
+        required: true
+      tags:
+      - rideposting
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RidePosting'
+          description: ''
+    put:
+      operationId: rideposting_update
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this ride posting.
+        required: true
+      tags:
+      - rideposting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RidePosting'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RidePosting'
+          description: ''
+    patch:
+      operationId: rideposting_partial_update
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this ride posting.
+        required: true
+      tags:
+      - rideposting
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedRidePosting'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedRidePosting'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedRidePosting'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RidePosting'
+          description: ''
+    delete:
+      operationId: rideposting_destroy
+      parameters:
+      - in: path
+        name: order_id
+        schema:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description: A unique value identifying this ride posting.
+        required: true
+      tags:
+      - rideposting
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
   /api/schema.yml:
     get:
       operationId: schema.yml_retrieve
@@ -323,6 +484,35 @@ components:
         location:
           type: string
           maxLength: 100
+    PatchedRidePosting:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        point_a:
+          type: string
+          maxLength: 150
+        point_b:
+          type: string
+          maxLength: 150
+        is_offer:
+          type: boolean
+        seats:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        bags:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        creator:
+          type: string
+          maxLength: 50
+        date:
+          type: string
+          format: date
     Profile:
       type: object
       properties:
@@ -348,6 +538,43 @@ components:
       - email
       - password
       - username
+    RidePosting:
+      type: object
+      properties:
+        order_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        point_a:
+          type: string
+          maxLength: 150
+        point_b:
+          type: string
+          maxLength: 150
+        is_offer:
+          type: boolean
+        seats:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        bags:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        creator:
+          type: string
+          maxLength: 50
+        date:
+          type: string
+          format: date
+      required:
+      - bags
+      - creator
+      - is_offer
+      - order_id
+      - point_a
+      - point_b
+      - seats
   securitySchemes:
     basicAuth:
       type: http

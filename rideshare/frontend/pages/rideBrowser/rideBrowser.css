@@ -1,0 +1,19 @@
+.ride-listings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  height: calc(
+    100vh - 120px
+  ); /* subtracting the height of header and padding */
+  overflow-y: auto; /* adding a scrollbar if necessary */
+  width: 100vw;
+}
+
+.ride-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin-top: 1rem;
+  width: 70vw;
+}

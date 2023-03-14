@@ -5,6 +5,7 @@ from .import views
 
 router = routers.DefaultRouter()
 router.register('profile', views.ProfileViewSet)
+router.register('rideposting', views.RidePostingViewSet)
 
 urlpatterns = [
     # API Addreses

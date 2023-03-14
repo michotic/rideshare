@@ -6,3 +6,27 @@
 2023-03-04 15:30:30.363 AST [2705] WARNING:  could not create listen socket for "localhost"
 2023-03-04 15:30:30.363 AST [2705] FATAL:  could not create any TCP/IP sockets
 2023-03-04 15:30:30.363 AST [2705] LOG:  database system is shut down
+2023-03-13 09:09:18.260 ADT [9606] LOG:  starting PostgreSQL 14.7 (Homebrew) on aarch64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-03-13 09:09:18.261 ADT [9606] LOG:  could not bind IPv6 address "::1": Address already in use
+2023-03-13 09:09:18.261 ADT [9606] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:09:18.261 ADT [9606] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2023-03-13 09:09:18.261 ADT [9606] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:09:18.261 ADT [9606] WARNING:  could not create listen socket for "localhost"
+2023-03-13 09:09:18.261 ADT [9606] FATAL:  could not create any TCP/IP sockets
+2023-03-13 09:09:18.261 ADT [9606] LOG:  database system is shut down
+2023-03-13 09:10:33.710 ADT [9630] LOG:  starting PostgreSQL 14.7 (Homebrew) on aarch64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-03-13 09:10:33.711 ADT [9630] LOG:  could not bind IPv6 address "::1": Address already in use
+2023-03-13 09:10:33.711 ADT [9630] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:10:33.711 ADT [9630] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2023-03-13 09:10:33.711 ADT [9630] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:10:33.711 ADT [9630] WARNING:  could not create listen socket for "localhost"
+2023-03-13 09:10:33.711 ADT [9630] FATAL:  could not create any TCP/IP sockets
+2023-03-13 09:10:33.711 ADT [9630] LOG:  database system is shut down
+2023-03-13 09:10:43.716 ADT [9638] LOG:  starting PostgreSQL 14.7 (Homebrew) on aarch64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-03-13 09:10:43.717 ADT [9638] LOG:  could not bind IPv6 address "::1": Address already in use
+2023-03-13 09:10:43.717 ADT [9638] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:10:43.717 ADT [9638] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2023-03-13 09:10:43.717 ADT [9638] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-03-13 09:10:43.717 ADT [9638] WARNING:  could not create listen socket for "localhost"
+2023-03-13 09:10:43.717 ADT [9638] FATAL:  could not create any TCP/IP sockets
+2023-03-13 09:10:43.717 ADT [9638] LOG:  database system is shut down

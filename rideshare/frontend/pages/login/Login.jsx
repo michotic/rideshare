@@ -4,18 +4,18 @@ import "./login.css";
 import { Navbar } from "../../components";
 import { ApiClient, Profile, ProfileApi } from "../../api/src";
 
-var defaultClient = new ApiClient("http://localhost:8000/");
-let apiClient = new ProfileApi(defaultClient);
-var basicAuth = defaultClient.authentications["basicAuth"];
-var callback = function (error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data, response);
-  }
-};
-
 const Login = () => {
+  var defaultClient = new ApiClient("http://localhost:8000/");
+  let apiClient = new ProfileApi(defaultClient);
+  var basicAuth = defaultClient.authentications["basicAuth"];
+  var callback = function (error, data, response) {
+    if (error) {
+      console.error(error);
+    } else {
+      // Succesful API call
+    }
+  };
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

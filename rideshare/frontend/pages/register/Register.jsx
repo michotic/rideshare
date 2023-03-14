@@ -4,20 +4,20 @@ import { ApiClient, Profile, ProfileApi } from "../../api/src";
 import { Navbar } from "../../components";
 import "./register.css";
 
-var defaultClient = new ApiClient("http://localhost:8000/");
-let apiClient = new ProfileApi(defaultClient);
-var basicAuth = defaultClient.authentications["basicAuth"];
-// basicAuth.username = "frontend";
-// basicAuth.password = "rideshare";
-var callback = function (error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log("API called successfully. Returned data: " + data);
-  }
-};
-
 const Register = () => {
+  var defaultClient = new ApiClient("http://localhost:8000/");
+  let apiClient = new ProfileApi(defaultClient);
+  var basicAuth = defaultClient.authentications["basicAuth"];
+  basicAuth.username = "frontend";
+  basicAuth.password = "rideshare";
+  var callback = function (error, data, response) {
+    if (error) {
+      console.error(error);
+    } else {
+      // Successful API call
+    }
+  };
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +52,15 @@ const Register = () => {
   };
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const fileContents = reader.result;
+      setFile({ name: selectedFile.name, contents: fileContents });
+    };
+
+    reader.readAsDataURL(selectedFile);
   };
 
   const handlePasswordMatch = () => {

@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from datetime import date
 
 User = get_user_model()
-# Create your models here.
 class Profile(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   username = models.CharField(max_length=50, primary_key=True)
@@ -14,3 +14,13 @@ class Profile(models.Model):
 
   def __str__(self):
     return self.user.username
+  
+class RidePosting(models.Model):
+  order_id = models.IntegerField(primary_key=True)
+  point_a = models.CharField(max_length=150)
+  point_b = models.CharField(max_length=150)
+  is_offer = models.BooleanField()
+  seats = models.IntegerField()
+  bags = models.IntegerField()
+  creator = models.CharField(max_length=50)
+  date = models.DateField(default=date.today)
